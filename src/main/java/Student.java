@@ -29,8 +29,28 @@ public class Student {
     }
 
     public double getGradeAverage() {
-        return 0;
+        double total = 0;
+        double sum = 0;
+        for(int i = 0; i < grades.size(); i++) {
+            total += grades.get(i);
+            sum = total / grades.size();
+        }
+
+        return sum;
     }
+
+
+    public static void main(String[] args) {
+        Student nick = new Student("Nick", 1);
+        nick.addGrade(98);
+        nick.addGrade(69);
+
+        System.out.println(nick.getName() + " " + nick.getGrades() + " " + nick.getId());
+        System.out.println(nick.getGradeAverage());
+
+    }
+
+
 
 
 }
